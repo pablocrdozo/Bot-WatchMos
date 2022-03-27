@@ -5,3 +5,5 @@ Bot para Discord con conexión a Youtube
 npm install discord.js
 npm i i18n
 npm i dotenv
+npm i @discordjs/builders
+npm i @discordjs/rest
