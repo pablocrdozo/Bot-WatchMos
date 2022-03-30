@@ -7,18 +7,18 @@ module.exports = {
         .setName('avatar')
         .setDescription('Devuelve el avatar del usuario, o el tuyo.')
         .addUserOption(option => option.setName('objetivo').setDescription('Usuario cuyo avatar quieres ver.')),
-    async run(interaction) {
+    async run(client, interaction) {
         const user = interaction.options.getUser('objetivo')
         if (user) {
             const embed = new MessageEmbed()
             .setColor(config.defaultSuccessColor)
-            .setDescription(`El avatar de ${user.username} es:`)
+            .setDescription(client.languages.__mf('avatar.objective', { username: user.username }))
             .setImage(user.displayAvatarURL({ dynamic: true, size: 4096 }))
             return interaction.reply({ embeds: [embed] })
         } else {
             const embed = new MessageEmbed()
             .setColor(config.defaultSuccessColor)
-            .setDescription(`Tu avatar es:`)
+            .setDescription(client.languages.__('avatar.self'))
             .setImage(interaction.user.displayAvatarURL({ dynamic: true, size: 4096 }))
             return interaction.reply({ embeds: [embed] })
         }

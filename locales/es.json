@@ -1,0 +1,6 @@
+{
+    "avatar": {
+        "objective": "El avatar de {username} es:",
+        "self": "Tu avatar es:"
+    }
+}

@@ -8,7 +8,7 @@ module.exports = {
         if (!command) return
         
         try {
-            await command.run(interaction)
+            await command.run(client, interaction)
         } catch(e) {
             console.error(e)
             return interaction.reply({ content: 'Ha surgido un error al ejecutar el comando'})
